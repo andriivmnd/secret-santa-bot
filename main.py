@@ -28,8 +28,11 @@ async def command_start_handler(message: Message) -> None:
 async def echo_handler(message: types.Message) -> None:
     try:
         if message.text == "/go":
-            mess = get_info()
-            await bot.send_message(chat_id=457362997, text="rrfrf")
+            efef = distributePlayers()
+            for i in efef:
+                await bot.send_message(chat_id=i[1], text="ШУТКА")
+                textD = f"Ти будеш Тайним Сантою для: {i[2][0]}, бажання: {i[2][2]}"
+                await bot.send_message(chat_id=i[1], text=textD)
         else:
             mwss = add_player(message.from_user.full_name, message.chat.id, message.text)
             if mwss == "new":
