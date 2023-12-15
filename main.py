@@ -10,7 +10,9 @@ from aiogram.utils.markdown import hbold
 
 from db import *
 
-TOKEN = "6856878466:AAHsi-iIInEqNeh8gTtyS8XzHzdAoWQywag"#getenv("BOT_TOKEN")
+import config
+
+TOKEN = config.TOKEN
 
 dp = Dispatcher()
 bot = Bot(TOKEN, parse_mode=ParseMode.HTML)
